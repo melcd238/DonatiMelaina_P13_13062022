@@ -4,11 +4,11 @@ import Footer from "../Components/Footer";
 
 const Layout =({children})=>{
     return(
-        <>
+        <div className="container-bank">
         <Header/>
         {children}
         <Footer/>
-        </>
+        </div>
     )
 }
 

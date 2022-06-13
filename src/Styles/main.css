@@ -19,6 +19,13 @@ html {
   
   .bg-dark {
     background-color: #12002b;
+ 
+  }
+  /*Add container to push footer at the end of the page*/
+  .container-bank{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
   }
   
   .sr-only {

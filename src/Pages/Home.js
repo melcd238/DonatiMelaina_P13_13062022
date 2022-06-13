@@ -5,8 +5,9 @@ import IconMoney from '../img/icon-money.png';
 import IconSecurity from '../img/icon-security.png'
 
 const Home =()=>{
+
     return(
- <main>
+ <main className="main">
         <Hero/>
 
         <section className="features">
