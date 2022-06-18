@@ -1,4 +1,4 @@
-
+import Button from "../Components/Button";
 
 const SignIn =()=>{
     return(
@@ -24,7 +24,7 @@ const SignIn =()=>{
            
             
             
-             <button className="sign-in-button">Sign In</button> 
+             <Button value="sign-in-button">Sign In</Button> 
         
           </form>
         </section>

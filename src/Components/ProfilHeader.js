@@ -1,4 +1,4 @@
-
+import Button from "./Button";
 
 
 const ProfilHeader = ()=>{
@@ -6,7 +6,7 @@ const ProfilHeader = ()=>{
     return(
      <div className="header">
         <h1>Welcome back<br />Tony Jarvis!</h1>
-        <button className="edit-button">Edit Name</button>
+        <Button value="edit-button">Edit Name</Button>
       </div>
 
     )

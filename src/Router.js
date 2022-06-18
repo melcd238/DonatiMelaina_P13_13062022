@@ -8,7 +8,7 @@ import Layout from './Layout/Layout';
 //import { useState } from 'react';
 
 
-// La route profil ne sera accessible qu'à l'utilisateur connecté. 
+// La route profil ne sera accessible qu'à l'utilisateur connecté voir avec redux plutot que le state
 
 function Router() {
 

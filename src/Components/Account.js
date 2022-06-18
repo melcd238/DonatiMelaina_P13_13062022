@@ -1,5 +1,5 @@
 
-import ButtonTransaction from "./ButtonTransaction"
+import Button from "./Button"
 
 const Account = (props)=>{
     return(
@@ -10,7 +10,7 @@ const Account = (props)=>{
           <p className="account-amount-description">{props.description}</p>
         </div>
         <div className="account-content-wrapper cta">
-          <ButtonTransaction/>
+          <Button value="transaction-button">View transaction</Button>
         </div>
       </section>
 
