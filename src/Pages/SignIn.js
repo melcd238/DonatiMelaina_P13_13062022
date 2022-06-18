@@ -10,8 +10,8 @@ const SignIn =()=>{
 
           <form>
             <div className="input-wrapper">
-              <label htmlFor="username">Username</label>
-              <input type="text" id="username" />
+              <label htmlFor="username">Email</label>
+              <input type="email" id="username" />
             </div>
             <div className="input-wrapper">
               <label htmlFor="password">Password</label>
