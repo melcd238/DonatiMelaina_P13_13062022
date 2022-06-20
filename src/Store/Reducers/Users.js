@@ -4,7 +4,7 @@ import { loginUser } from '../actions/Users'
 let DEFAULT_USER_STATE ={
     loading : false,
     data:{
-        _id:null,
+            id:null,
         email:null,
         firstName:null,
         lastName:null,
@@ -31,7 +31,9 @@ export const usersSlice = createSlice({
             state.auth = action.payload.auth;
             state.message = action.payload.message
         })
-        .addCase(loginUser.rejected,(state)=>{state.loading = false})
+        .addCase(loginUser.rejected,(state)=>{
+            state.loading = false;
+            })
     }
 })
 

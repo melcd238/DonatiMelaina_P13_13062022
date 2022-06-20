@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk} from '@reduxjs/toolkit';
+import { errorGlobal, successGlobal} from '../Reducers/Notification'
 
 
 
@@ -12,8 +13,10 @@ export const loginUser = createAsyncThunk(
                password: password
            });
            console.log(request.data.message)
+           dispatch(successGlobal(request.data.message))
            return{ data : request.data.body, auth:true , message: request.data.message}
         } catch (error) {
+            dispatch(errorGlobal('Sorry! Something wrong happens!'))
             throw error
         }
 

@@ -3,7 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from 'yup';
 import {useDispatch, useSelector} from 'react-redux'
 
-import { loginUser } from '../Store/actions/Users'
+import { loginUser } from '../Store/actions/Users';
+import { Loader } from '../Utils/Tools'
 
 
 const SignIn =()=>{
@@ -17,7 +18,12 @@ const SignIn =()=>{
         <section className="sign-in-content">
           <i className="fa fa-user-circle sign-in-icon"></i>
           <h1>Sign In</h1>
+        
+        {users.loading ? 
+        
+        <Loader/>
 
+        :
 
         <Formik 
             initialValues={{ email: '', password: '', remember:false }}
@@ -58,6 +64,7 @@ const SignIn =()=>{
           </Form>
            )}
           </Formik>
+}
         </section>
       </main>
     )
