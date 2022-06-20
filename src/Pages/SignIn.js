@@ -1,8 +1,16 @@
 import Button from "../Components/Button";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from 'yup';
+import {useDispatch, useSelector} from 'react-redux'
+
+import { loginUser } from '../Store/actions/Users'
+
 
 const SignIn =()=>{
+  // Redux Logic
+  const users = useSelector((state)=>state.users);
+  const dispatch = useDispatch();
+
     return(
         <main className="main bg-dark">
 
@@ -21,9 +29,11 @@ const SignIn =()=>{
               .required("Password is required")  
             })}
             onSubmit={(values, { setSubmitting }) => {
-             console.log(values)
+             dispatch(loginUser(values))
+             setSubmitting(false)
               
-            }}>
+            }}
+           >
           {({ isSubmitting }) => (
           <Form>
             <div className="input-wrapper">
