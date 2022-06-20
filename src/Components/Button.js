@@ -1,8 +1,8 @@
 
 
-const Button = ({children,value})=>{
+const Button = ({children,value, typeOfBtn})=>{
     return(
-        <button className={value}>{children}</button>
+        <button className={value} type={typeOfBtn}>{children}</button>
     )
 
 }
