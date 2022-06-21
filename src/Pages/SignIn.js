@@ -1,7 +1,9 @@
 import Button from "../Components/Button";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from 'yup';
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux';
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 import { loginUser } from '../Store/actions/Users';
 import { Loader } from '../Utils/Tools'
@@ -11,6 +13,14 @@ const SignIn =()=>{
   // Redux Logic
   const users = useSelector((state)=>state.users);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+ useEffect(()=>{
+   if(users.auth){
+      navigate('/profil')
+   }
+
+ },[users.auth, navigate])
 
     return(
         <main className="main bg-dark">
