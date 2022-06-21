@@ -1,5 +1,6 @@
 import { LinearProgress } from '@mui/material'
 import Stack from '@mui/material/Stack';
+import { toast } from 'react-toastify';
 
 
 
@@ -13,5 +14,24 @@ export const Loader = () =>{
                 </Stack>
         </div>
     )
+
+}
+
+export const showToast =(type, message)=>{
+    switch(type){
+        case 'SUCCESS':
+            toast.success(message,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+            break;
+        case 'ERROR':
+                toast.error(message,{
+                    position: toast.POSITION.TOP_RIGHT
+                })
+                break;
+         default:
+             return false          
+
+    }
 
 }

@@ -12,7 +12,6 @@ export const loginUser = createAsyncThunk(
                email:email,
                password: password
            });
-           console.log(request.data.message)
            dispatch(successGlobal(request.data.message))
            return{ data : request.data.body, auth:true , message: request.data.message}
         } catch (error) {
