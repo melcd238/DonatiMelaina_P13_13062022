@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUser } from '../actions/Users'
+import { loginUser, getProfilUser,updateProfilUser } from '../actions/Users'
 
 let DEFAULT_USER_STATE ={
     loading : false,
@@ -33,7 +33,9 @@ export const usersSlice = createSlice({
         })
         .addCase(loginUser.rejected,(state)=>{
             state.loading = false;
-            })
+         })
+         //GETPROFIL
+         //UPDATEPROFIL
     }
 })
 

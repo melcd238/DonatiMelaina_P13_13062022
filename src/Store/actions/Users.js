@@ -21,3 +21,25 @@ export const loginUser = createAsyncThunk(
 
     }
 )
+
+export const getProfilUser = createAsyncThunk(
+    'users/getProfilUser',
+    async()=>{
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+)
+
+export const updateProfilUser = createAsyncThunk(
+    'users/getProfilUser',
+    async()=>{
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+)
