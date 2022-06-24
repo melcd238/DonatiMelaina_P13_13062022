@@ -1,6 +1,9 @@
 import { LinearProgress } from '@mui/material'
 import Stack from '@mui/material/Stack';
 import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
+
+
 
 
 
@@ -34,4 +37,10 @@ export const showToast =(type, message)=>{
 
     }
 
+}
+
+export const GetAuthHeader = ()=>{
+    const usersToken = useSelector((state)=>state.users.data.token)
+    console.log(usersToken)
+    return { headers : {'authorization' : `Bearer ${usersToken}`}}
 }

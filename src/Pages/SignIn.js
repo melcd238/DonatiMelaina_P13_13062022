@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-import { loginUser } from '../Store/actions/Users';
+import { loginUser, getProfilUser } from '../Store/actions/Users';
 import { Loader } from '../Utils/Tools'
 
 
@@ -16,11 +16,16 @@ const SignIn =()=>{
   const navigate = useNavigate();
 
  useEffect(()=>{
-   if(users.auth){
+   if(users.data.token){
+     dispatch(getProfilUser())
+     if(users.auth){
       navigate('/profil')
+     } else{
+       navigate('/signIn')
+     }
    }
 
- },[users.auth, navigate])
+ },[users.data.token,users.auth, dispatch, navigate])
 
     return(
         <main className="main bg-dark">
