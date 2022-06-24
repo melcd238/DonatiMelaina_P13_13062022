@@ -12,12 +12,13 @@ import { Loader } from '../Utils/Tools'
 const SignIn =()=>{
   // Redux Logic
   const users = useSelector((state)=>state.users);
+  console.log(users)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
  useEffect(()=>{
    if(users.data.token){
-     dispatch(getProfilUser())
+     dispatch(getProfilUser(users.data.token))
      if(users.auth){
       navigate('/profil')
      } else{

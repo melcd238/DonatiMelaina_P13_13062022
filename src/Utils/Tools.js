@@ -39,8 +39,9 @@ export const showToast =(type, message)=>{
 
 }
 
-export const GetAuthHeader = ()=>{
-    const usersToken = useSelector((state)=>state.users.data.token)
-    console.log(usersToken)
-    return { headers : {'authorization' : `Bearer ${usersToken}`}}
+export const GetAuthHeader = (token)=>{
+ 
+    return { headers : {'authorization' : `Bearer ${token}`}}
+  
+   
 }
