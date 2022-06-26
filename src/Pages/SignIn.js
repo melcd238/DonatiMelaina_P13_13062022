@@ -12,7 +12,6 @@ import { Loader } from '../Utils/Tools'
 const SignIn =()=>{
   // Redux Logic
   const users = useSelector((state)=>state.users);
-  console.log(users)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
