@@ -4,7 +4,7 @@ import { loginUser, getProfilUser, updateProfilUser, signOutUser } from '../acti
 let DEFAULT_USER_STATE ={
     loading : false,
     data:{
-            id:null,
+        id:null,
         email:null,
         firstName:null,
         lastName:null,

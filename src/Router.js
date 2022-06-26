@@ -15,7 +15,7 @@ function Router() {
     <Layout>
    <Routes>
      <Route path="/" element={<Home />}></Route>
-     <Route path="signIn" element={<SignIn/>}></Route>
+     <Route path="login" element={<SignIn/>}></Route>
      <Route path="profil" element={<Profil/>}></Route>  
      <Route path="*" element={<Error />} />
    </Routes>
