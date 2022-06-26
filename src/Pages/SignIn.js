@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 import { loginUser, getProfilUser } from '../Store/actions/Users';
-import { Loader } from '../Utils/Tools'
+import { Loader } from '../Utils/Tools';
+import PreventSignIn from "../HOC/preventSignIn";
 
 
 const SignIn =()=>{
@@ -28,6 +29,7 @@ const SignIn =()=>{
  },[users.data.token,users.auth, dispatch, navigate])
 
     return(
+      <PreventSignIn users={users}>
         <main className="main bg-dark">
 
         <section className="sign-in-content">
@@ -82,6 +84,7 @@ const SignIn =()=>{
 }
         </section>
       </main>
+      </PreventSignIn>
     )
 }
 
