@@ -31,8 +31,8 @@ const ProfilHeader = ()=>{
                .max(30) 
              })}
              onSubmit={(values, { setSubmitting }) => {
-               console.log(users.token,values)
-             dispatch(updateProfilUser(values))
+            const userData= {token:users.token, values}
+             dispatch(updateProfilUser(userData))
               setSubmitting(false)
               setShowModal(false)
                
