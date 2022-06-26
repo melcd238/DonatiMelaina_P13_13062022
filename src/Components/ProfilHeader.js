@@ -38,17 +38,17 @@ const ProfilHeader = ()=>{
                
              }}>
          {({ isSubmitting }) => (       
-       <Form>
-         <div>
-         <Field type="text" id="firstName" name="firstName" />
+       <Form className="updateForm">
+         <div className="upadateFormField">
+         <Field type="text" id="firstName" name="firstName"  className="field-form one"/>
          <ErrorMessage name="lastName" component="div" style={{color: "red"}} />
-         <Field type="text" id="lastName" name="lastName"/>
+         <Field type="text" id="lastName" name="lastName" className="field-form two"/>
          <ErrorMessage name="lastName" component="div" style={{color: "red"}} />
          </div>
 
-         <div>
-           <Button value="edit-button" typeOfBtn="submit" disabled={isSubmitting}>Save</Button> 
-           <Button value="edit-button" onClick={()=>setShowModal(!showModal)}>Cancel</Button> 
+         <div className="upadateFormBtn">
+           <Button value="update-button" typeOfBtn="submit" disabled={isSubmitting}>Save</Button> 
+           <Button value="update-button" onClick={()=>setShowModal(!showModal)}>Cancel</Button> 
          </div>
        
        </Form>
@@ -61,7 +61,7 @@ const ProfilHeader = ()=>{
        :
        <>
        <h1>Welcome back<br />
-        {users.firstName} {users.lastName}!</h1>
+        {users.firstName} {users.lastName} !</h1>
         <Button value="edit-button" onClick={()=>setShowModal(!showModal)}>Edit Name</Button> 
        </> 
       } 

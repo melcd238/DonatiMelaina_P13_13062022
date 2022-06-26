@@ -24,12 +24,16 @@ export const showToast =(type, message)=>{
     switch(type){
         case 'SUCCESS':
             toast.success(message,{
-                position: toast.POSITION.TOP_RIGHT
+                position: toast.POSITION.BOTTOM_CENTER,
+                autoClose: 3000,
+                pauseOnHover: false,
             })
             break;
         case 'ERROR':
                 toast.error(message,{
-                    position: toast.POSITION.TOP_RIGHT
+                    position: toast.POSITION.BOTTOM_CENTER,
+                    autoClose: 3000,
+                    pauseOnHover: false,
                 })
                 break;
          default:
