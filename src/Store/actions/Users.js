@@ -31,7 +31,6 @@ export const getProfilUser = createAsyncThunk(
             const headers =  GetAuthHeader(token)
             const request = await axios.post('http://localhost:3001/api/v1/user/profile',{}, headers)
             dispatch(successGlobal(request.data.message))
-            console.log(request.data.body)
             return { data: request.data.body, auth:true, message:request.data.message}
             
         } catch (error) {
@@ -42,12 +41,23 @@ export const getProfilUser = createAsyncThunk(
 )
 
 export const updateProfilUser = createAsyncThunk(
-    'users/getProfilUser',
-    async()=>{
+    'users/updateProfilUser',
+    async({firstName, lastName},{dispatch})=>{
         try {
-            
+            const request = await axios.put('http://localhost:3001/api/v1/user/profile',{firstName, lastName}, GetAuthHeader() )
+            dispatch(successGlobal(request.data.message))
+            console.log(request.data.body)
+            return { data: request.data.body, auth:true, message:request.data.message}
         } catch (error) {
-            
+            dispatch(errorGlobal('Sorry! You are not authorized!'))
+            throw error
         }
+    }
+)
+
+export const signOutUser = createAsyncThunk(
+    'users/signOutUser',
+    async()=>{
+        return {data: {}, auth:false, message:""}
     }
 )

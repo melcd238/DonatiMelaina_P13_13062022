@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from 'yup';
+import { updateProfilUser } from "../Store/actions/Users";
 
 const ProfilHeader = ()=>{
   const users = useSelector((state)=>(state.users.data));
@@ -30,7 +31,8 @@ const ProfilHeader = ()=>{
                .max(30) 
              })}
              onSubmit={(values, { setSubmitting }) => {
-             console.log(values)
+               console.log(users.token,values)
+             dispatch(updateProfilUser(values))
               setSubmitting(false)
               setShowModal(false)
                

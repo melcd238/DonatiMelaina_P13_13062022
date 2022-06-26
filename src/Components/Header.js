@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { clearNotification } from "../Store/Reducers/Notification";
 import { showToast } from "../Utils/Tools";
 import { useLocation } from "react-router-dom";
+import { signOutUser } from "../Store/actions/Users";
 
 // Affichage conditionel du Header suivant la page à faire 
 
@@ -29,6 +30,10 @@ const Header =()=>{
     }
 
   },[notification, dispatch])
+
+  const signOut =()=>{
+    dispatch(signOutUser())
+  }
 
 
   if(location.pathname === '/' || location.pathname === '/signIn'){
@@ -67,7 +72,7 @@ const Header =()=>{
       <i className="fa fa-user-circle"></i>
       {usersFirsName}
     </Link>
-    <Link className="main-nav-item" to="/">
+    <Link className="main-nav-item" to="/" onClick={()=>signOut()}>
       <i className="fa fa-sign-out"></i>
       Sign Out
     </Link>
