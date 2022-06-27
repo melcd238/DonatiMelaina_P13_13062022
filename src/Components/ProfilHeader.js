@@ -22,11 +22,11 @@ const ProfilHeader = ()=>{
              initialValues={{ firstName: `${users.firstName}`,lastName:`${users.lastName}` }}
              validationSchema={yup.object({
                firstName:yup.string()
-                  .required("firstName is required!")
+                  .required("FirstName is required!")
                   .matches(/^[aA-zZ\s]+$/, 'Please enter valid firstName')
                   .max(30),
                lastName:yup.string()
-               .required("lastName is required")
+               .required("LastName is required")
                .matches(/^[aA-zZ\s]+$/, 'Please enter valid lastName')
                .max(30) 
              })}
@@ -40,10 +40,14 @@ const ProfilHeader = ()=>{
          {({ isSubmitting }) => (       
        <Form className="updateForm">
          <div className="upadateFormField">
+           <div className="input-wrapper">
          <Field type="text" id="firstName" name="firstName"  className="field-form one"/>
-         <ErrorMessage name="lastName" component="div" style={{color: "red"}} />
+         <ErrorMessage name="firstName" component="div" style={{color: "red",marginTop:"8px"}} />
+           </div>
+           <div className="input-wrapper">
          <Field type="text" id="lastName" name="lastName" className="field-form two"/>
          <ErrorMessage name="lastName" component="div" style={{color: "red"}} />
+           </div>
          </div>
 
          <div className="upadateFormBtn">
