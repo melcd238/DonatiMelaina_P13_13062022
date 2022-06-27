@@ -31,7 +31,7 @@ export const showToast =(type, message)=>{
             break;
         case 'ERROR':
                 toast.error(message,{
-                    position: toast.POSITION.BOTTOM_CENTER,
+                    position: toast.BOTTOM_CENTER,
                     autoClose: 3000,
                     pauseOnHover: false,
                 })

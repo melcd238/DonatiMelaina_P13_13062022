@@ -17,7 +17,7 @@ export const loginUser = createAsyncThunk(
            dispatch(successGlobal(request.data.message))
            return{ data : request.data.body, auth:true , message: request.data.message}
         } catch (error) {
-            dispatch(errorGlobal('Sorry! Something wrong happens!'))
+            dispatch(errorGlobal('Sorry! Something wrong with your Email or Password!'))
             throw error
         }
 
@@ -60,7 +60,8 @@ export const updateProfilUser = createAsyncThunk(
 
 export const signOutUser = createAsyncThunk(
     'users/signOutUser',
-    async()=>{
+    async( data , {dispatch})=>{
+        dispatch(successGlobal("You are logout! If you want to sign in, click on the link above "))
         return {data: {}, auth:false, message:""}
     }
 )
