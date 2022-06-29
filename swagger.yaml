@@ -113,7 +113,7 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-/transactions/getTransactions:
+/{account}/transactions:
    get:
     security:
         - Bearer: []
@@ -143,15 +143,15 @@ responses:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-/transactions/getTransactionByID/{id}:
+/{account}/transactions/{id}:
 get:
     security:
         - Bearer: []
     tags:
         - Transaction Module
-summary: User search TransactionbyID API
-description: API for fetching one transaction for the current month with its ID
-parameters:
+    summary: User search TransactionbyID API
+    description: API for fetching one transaction for the current month with its ID
+    parameters:
         - in: query
           type: string
           name: id
@@ -162,9 +162,9 @@ parameters:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
-produces:
+    produces:
         - application/json
-responses:
+    responses:
         '200':
           description: transaction by id retrieved successfully
           schema:
@@ -173,15 +173,15 @@ responses:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-/transactions/getTransactionByID/{id}/addInformations:
+/{account}/transactions/{id}/addInformations:
 post:
     security:
         - Bearer: []
     tags:
         - Transaction Module
-summary: User search TransactionbyID API and add some informations
-description: API for fetching one transaction for the current month with its ID and add some informations
-parameters:
+    summary: User search TransactionbyID API and add some informations
+    description: API for fetching one transaction for the current month with its ID and add some informations
+    parameters:
         - in: query
           type: string
           name: id
@@ -192,9 +192,9 @@ parameters:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
-produces:
+    produces:
         - application/json
-responses:
+    responses:
         '200':
           description: Add some information to transaction by id retrieved successfully
           schema:
@@ -203,15 +203,15 @@ responses:
           description: Invalid Fields
         '500':
           description: Internal Server Error  
-/transactions/getTransactionByID/{id}/UpdateInformations:
+/{account}/transactions/{id}/UpdateInformations:
 put:
     security:
         - Bearer: []
     tags:
         - Transaction Module
-summary: User search TransactionbyID API and update some informations
-description: API for fetching one transaction for the current month with its ID and update some informations
-parameters:
+    summary: User search TransactionbyID API and update some informations
+    description: API for fetching one transaction for the current month with its ID and update some informations
+    parameters:
         - in: query
           type: string
           name: id
@@ -222,9 +222,9 @@ parameters:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
-produces:
+    produces:
         - application/json
-responses:
+    responses:
         '200':
           description: Upadte some information to transaction by id retrieved successfully
           schema:
@@ -233,15 +233,15 @@ responses:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-/transactions/getTransactionByID/{id}/DeleteInformations:
+/{account}/transactions/{id}/DeleteInformations:
 delete:
     security:
         - Bearer: []
     tags:
         - Transaction Module
-summary: User search TransactionbyID API and delete some informations
-description: API for fetching one transaction for the current month with its ID and delete some informations
-parameters:
+    summary: User search TransactionbyID API and delete some informations
+    description: API for fetching one transaction for the current month with its ID and delete some informations
+    parameters:
         - in: query
           type: string
           name: id
@@ -252,9 +252,9 @@ parameters:
           name: Authorization
           description: Attach Bearer JWT token
           required: true
-produces:
+    produces:
         - application/json
-responses:
+    responses:
         '200':
           description: Delete some information to transaction by id retrieved successfully
           schema:
@@ -319,3 +319,4 @@ definitions:
         type: string
       lastName:
         type: string
+
