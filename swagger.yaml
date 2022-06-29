@@ -122,16 +122,10 @@ paths:
 summary: User search Transactions API
 description: API for fetching list of transactions for the current month
 parameters:
-        - in: query
-          type: string
-          name: current Month
-          description: find the list of transactions for the current month
-          required: true
-        - in: header
-          type: string
-          name: Authorization
-          description: Attach Bearer JWT token
-          required: true
+  - in: header
+    name: Authorization
+    description: Attach Bearer JWT token
+    required: true
 produces:
         - application/json
 responses:
@@ -158,7 +152,6 @@ get:
           description: find one transaction by id
           required: true
         - in: header
-          type: string
           name: Authorization
           description: Attach Bearer JWT token
           required: true
@@ -188,10 +181,13 @@ post:
           description: find one transaction by id and add some informations
           required: true
         - in: header
-          type: string
           name: Authorization
           description: Attach Bearer JWT token
           required: true
+        - in: body
+          name: body
+          description: Add some informations to transactions attributes
+          required: true  
     produces:
         - application/json
     responses:
@@ -218,10 +214,13 @@ put:
           description: find one transaction by id and update some informations
           required: true
         - in: header
-          type: string
           name: Authorization
           description: Attach Bearer JWT token
           required: true
+        - in: body
+          name: body
+          description: Update some informations to transactions attributes
+          required: true    
     produces:
         - application/json
     responses:
@@ -248,7 +247,6 @@ delete:
           description: find one transaction by id and delete some informations
           required: true
         - in: header
-          type: string
           name: Authorization
           description: Attach Bearer JWT token
           required: true
