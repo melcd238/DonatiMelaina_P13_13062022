@@ -163,7 +163,7 @@ get:
           schema:
             $ref: '#/definitions/ApiResponse'
         '400':
-          description: Invalid Fields
+          description: transaction not found
         '500':
           description: Internal Server Error
 /{account}/transactions/{id}/addInformations:
@@ -196,7 +196,7 @@ post:
           schema:
             $ref: '#/definitions/ApiResponse'
         '400':
-          description: Invalid Fields
+          description: unable to add information
         '500':
           description: Internal Server Error  
 /{account}/transactions/{id}/UpdateInformations:
@@ -229,7 +229,7 @@ put:
           schema:
             $ref: '#/definitions/ApiResponse'
         '400':
-          description: Invalid Fields
+          description: unable to update information
         '500':
           description: Internal Server Error
 /{account}/transactions/{id}/DeleteInformations:
@@ -258,7 +258,7 @@ delete:
           schema:
             $ref: '#/definitions/ApiResponse'
         '400':
-          description: Invalid Fields
+          description: unable to delete information
         '500':
           description: Internal Server Error            
           
